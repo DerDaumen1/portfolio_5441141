@@ -1,16 +1,19 @@
-# portfolio_5441141
+# Flutter Portfolio Projekt
 
-A new Flutter project.
+Dies ist ein Übungsprojekt für das Flutter-Praktikum im SS2025.  
+Es dient als Einstieg in die Arbeit mit Flutter, Git und GitHub.
 
-## Getting Started
+## 📦 Verwendete Technologien
+- Flutter Version: 3.29.2 (stable)
+- Entwicklungsumgebung: VS Code / Android Studio
+- Plattform: Windows
 
-This project is a starting point for a Flutter application.
+## 🚀 Projekt starten
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub get
+flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Die Entwicklung erfolgt auf dem Haupt-Branch main.
+Neue Features werden in eigenen Branches wie feature/startseite entwickelt und nach Fertigstellung zurück in main gemergt – optional über einen Pull Request.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
