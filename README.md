@@ -1,6 +1,6 @@
 # Flutter Portfolio Projekt
-
-Dies ist ein Übungsprojekt für das Flutter-Praktikum im SS2025.  
+Diese Readme ist von Robin Leon Daumlechener mit der MN: 5441141.
+Dies ist ein Übungsprojekt für das Flutter-Praktikum im SS2025 .  
 Es dient als Einstieg in die Arbeit mit Flutter, Git und GitHub.
 
 ## 📦 Verwendete Technologien
