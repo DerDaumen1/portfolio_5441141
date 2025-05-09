@@ -8,7 +8,12 @@ import 'summary_page.dart';
 class HomeMenu extends StatelessWidget {
   final AppData appData;
   final void Function(bool) onThemeChange;
-  const HomeMenu({super.key, required this.appData, required this.onThemeChange});
+
+  const HomeMenu({
+    super.key,
+    required this.appData,
+    required this.onThemeChange,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,17 @@ class HomeMenu extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // Begrüßungstext
+            Padding(
+              padding: const EdgeInsets.only(bottom: 24),
+              child: Text(
+                'Willkommen im Portfolio von Leon Daumlechner!',
+                style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+            // ► Menü‑Buttons
             _menuButton(
               context,
               title: 'Slider‑Seite',
@@ -61,8 +77,11 @@ class HomeMenu extends StatelessWidget {
     );
   }
 
-  Widget _menuButton(BuildContext ctx,
-      {required String title, required WidgetBuilder builder}) {
+  Widget _menuButton(
+    BuildContext ctx, {
+    required String title,
+    required WidgetBuilder builder,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: ElevatedButton(
