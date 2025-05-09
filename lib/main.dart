@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart'; // Importiere deine neue Seite
 import 'package:portfolio_5441141/pages/slider_page.dart';
+import 'package:portfolio_5441141/pages/profile_form_page.dart';
 
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SliderPage(), // Nutze die neue Startseite
+      home: const ProfileFormPage(),
+ // Nutze die neue Startseite
     );
   }
 }
