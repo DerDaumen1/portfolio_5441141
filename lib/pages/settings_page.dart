@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+  final void Function(bool isDarkMode) onThemeChange;
+  const SettingsPage({super.key, required this.onThemeChange});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -39,7 +40,10 @@ class _SettingsPageState extends State<SettingsPage> {
               title: const Text("Dunkler Modus"),
               value: darkMode,
               onChanged: (value) {
-                setState(() => darkMode = value);
+                setState(() {
+                  darkMode = value;
+                  widget.onThemeChange(value); // 🔄 Thema wechseln
+                });
               },
             ),
             SwitchListTile(
