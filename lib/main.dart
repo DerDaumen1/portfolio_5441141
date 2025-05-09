@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_5441141/pages/settings_page.dart';
-import 'package:portfolio_5441141/pages/slider_page.dart';
-import 'package:portfolio_5441141/pages/profile_form_page.dart';
+import 'app_data.dart';
+import 'pages/home_menu.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -15,11 +12,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = ThemeMode.light;
+  final appData = AppData();                // zentrale Dateninstanz
+  ThemeMode _mode = ThemeMode.light;
 
-  void toggleTheme(bool isDarkMode) {
+  void toggleTheme(bool isDark) {
     setState(() {
-      _themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
+      _mode = isDark ? ThemeMode.dark : ThemeMode.light;
+      appData.darkMode = isDark;            // direkt mitschreiben
     });
   }
 
@@ -29,8 +28,11 @@ class _MyAppState extends State<MyApp> {
       title: 'Portfolio',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      themeMode: _themeMode,
-      home: SettingsPage(onThemeChange: toggleTheme),
+      themeMode: _mode,
+      home: HomeMenu(
+        appData: appData,
+        onThemeChange: toggleTheme,
+      ),
     );
   }
 }
