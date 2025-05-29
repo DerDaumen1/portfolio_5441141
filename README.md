@@ -1,5 +1,7 @@
 # Flutter Portfolio Projekt
 Diese Readme ist von Robin Leon Daumlechener mit der MN: 5441141.
+Meine THM-Email lautet: leon.daumlechner@mnd.thm.de
+
 Dies ist ein Übungsprojekt für das Flutter-Praktikum im SS2025 .  
 Es dient als Einstieg in die Arbeit mit Flutter, Git und GitHub.
 
