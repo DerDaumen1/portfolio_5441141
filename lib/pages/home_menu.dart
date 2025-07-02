@@ -4,6 +4,8 @@ import 'slider_page.dart';
 import 'profile_form_page.dart';
 import 'settings_page.dart';
 import 'summary_page.dart';
+import 'mood_slider_page.dart';
+
 
 class HomeMenu extends StatelessWidget {
   final AppData appData;
@@ -36,11 +38,8 @@ class HomeMenu extends StatelessWidget {
             // ► Menü‑Buttons
             _menuButton(
               context,
-              title: 'Slider‑Seite',
-              builder: (_) => SliderPage(
-                value: appData.slider,
-                onChanged: (v) => appData.slider = v,
-              ),
+                title: 'Wie ist dein Gemüt heute?',
+                  builder: (_) => MoodSliderPage(data: appData),
             ),
             _menuButton(
               context,
