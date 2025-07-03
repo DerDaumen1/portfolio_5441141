@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../app_data.dart';
 import 'work_page.dart';
+import 'about_page.dart';
 import 'profile_form_page.dart';
 import 'settings_page.dart';
-import 'mood_slider_page.dart';
-import 'summary_page.dart';
 import 'contact_page.dart';
+import 'summary_page.dart';
 
 class HomeMenu extends StatelessWidget {
   final AppData appData;
@@ -25,7 +25,7 @@ class HomeMenu extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Begrüßungstext
+            // Begrüßung
             Padding(
               padding: const EdgeInsets.only(bottom: 24),
               child: Text(
@@ -35,20 +35,31 @@ class HomeMenu extends StatelessWidget {
               ),
             ),
 
-            // ► Menü‑Buttons
+            // ► Home zeigt dieses Menü erneut – optional
             _menuButton(
               context,
               title: 'Home',
-              builder: (_) => HomeMenu(appData: appData, onThemeChange: onThemeChange),
+              builder: (_) => this,
             ),
+
+            // ► Work & Mood
             _menuButton(
               context,
               title: 'Work & Mood',
               builder: (_) => WorkPage(data: appData),
             ),
+
+            // ► About‑Seite (Anzeige)
             _menuButton(
               context,
-              title: 'Profil',
+              title: 'About Me',
+              builder: (_) => AboutPage(data: appData),
+            ),
+
+            // ► Profil bearbeiten (Formular)
+            _menuButton(
+              context,
+              title: 'Profil bearbeiten',
               builder: (_) => ProfileFormPage(
                 initialName: appData.name,
                 initialEmail: appData.email,
@@ -61,6 +72,8 @@ class HomeMenu extends StatelessWidget {
                 },
               ),
             ),
+
+            // ► Einstellungen
             _menuButton(
               context,
               title: 'Einstellungen',
@@ -69,12 +82,17 @@ class HomeMenu extends StatelessWidget {
                 onThemeChange: onThemeChange,
               ),
             ),
+
+            // ► Kontakt
             _menuButton(
               context,
               title: 'Kontakt',
               builder: (_) => ContactPage(data: appData),
             ),
+
             const Divider(height: 40),
+
+            // ► Zusammenfassung
             _menuButton(
               context,
               title: 'Zusammenfassung',
@@ -86,6 +104,7 @@ class HomeMenu extends StatelessWidget {
     );
   }
 
+  // Hilfs‑Funktion für Buttons
   Widget _menuButton(
     BuildContext ctx, {
     required String title,
