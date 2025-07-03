@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../app_data.dart';
-import 'slider_page.dart';
+import 'work_page.dart';
 import 'profile_form_page.dart';
 import 'settings_page.dart';
-import 'summary_page.dart';
 import 'mood_slider_page.dart';
-
+import 'summary_page.dart';
+import 'contact_page.dart';
 
 class HomeMenu extends StatelessWidget {
   final AppData appData;
@@ -38,12 +38,17 @@ class HomeMenu extends StatelessWidget {
             // ► Menü‑Buttons
             _menuButton(
               context,
-                title: 'Wie ist dein Gemüt heute?',
-                  builder: (_) => MoodSliderPage(data: appData),
+              title: 'Home',
+              builder: (_) => HomeMenu(appData: appData, onThemeChange: onThemeChange),
             ),
             _menuButton(
               context,
-              title: 'Profil‑Formular',
+              title: 'Work & Mood',
+              builder: (_) => WorkPage(data: appData),
+            ),
+            _menuButton(
+              context,
+              title: 'Profil',
               builder: (_) => ProfileFormPage(
                 initialName: appData.name,
                 initialEmail: appData.email,
@@ -63,6 +68,11 @@ class HomeMenu extends StatelessWidget {
                 data: appData,
                 onThemeChange: onThemeChange,
               ),
+            ),
+            _menuButton(
+              context,
+              title: 'Kontakt',
+              builder: (_) => ContactPage(data: appData),
             ),
             const Divider(height: 40),
             _menuButton(
