@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'app_data.dart';
-import 'pages/home_menu.dart';
+
+import 'pages/home_page.dart';   // Startseite mit Foto
+import 'pages/home_menu.dart';   // Menü erreichst du über den Button
 
 void main() => runApp(const MyApp());
 
@@ -12,13 +14,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final appData = AppData();                // zentrale Dateninstanz
-  ThemeMode _mode = ThemeMode.light;
+  final appData = AppData();           // zentrale Dateninstanz
+  ThemeMode _mode = ThemeMode.light;   // hell / dunkel
 
-  void toggleTheme(bool isDark) {
+  void _toggleTheme(bool isDark) {     // Callback aus SettingsPage
     setState(() {
       _mode = isDark ? ThemeMode.dark : ThemeMode.light;
-      appData.darkMode = isDark;            // direkt mitschreiben
+      appData.darkMode = isDark;
     });
   }
 
@@ -29,9 +31,10 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: _mode,
-      home: HomeMenu(
+      // ► App startet jetzt mit HomePage (Foto + Button)
+      home: HomePage(
         appData: appData,
-        onThemeChange: toggleTheme,
+        onThemeChange: _toggleTheme,
       ),
     );
   }
