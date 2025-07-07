@@ -8,4 +8,5 @@ class AppData {
   bool updates   = false;
   bool darkMode  = false;
   bool offline   = false;
+  bool offlineMode = false;
 }

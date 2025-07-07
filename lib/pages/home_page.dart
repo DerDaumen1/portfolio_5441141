@@ -59,11 +59,14 @@ class HomePage extends StatelessWidget {
 
               // Buttons zu den Unterseiten
               _navButton(
-                context,
-                icon: Icons.work,
-                label: 'Work',
-                builder: (_) => WorkPage(data: appData),
-              ),
+  context,
+  icon: Icons.work,
+  label: 'Work',
+  builder: (_) => WorkPage(
+    data: appData,
+    onThemeChange: onThemeChange,   // << Callback mitgeben
+  ),
+),
               _navButton(
                 context,
                 icon: Icons.person,

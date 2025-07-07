@@ -1,11 +1,16 @@
+// lib/app_data.dart
 class AppData {
-  String name  = '';
-  String email = '';
-  String about = '';
-  double slider = 0;
+  // ‑‑ Basis‑Profil ‑‑
+  String name   = '';
+  String email  = '';
+  String about  = '';
 
-  bool newsletter = false;
-  bool updates   = false;
-  bool darkMode  = false;
-  bool offline   = false;
+  // ‑‑ Demo‑Slider ‑‑
+  double slider = 50;
+
+  // ‑‑ Einstellungen (Praktikum 2) ‑‑
+  bool newsletter  = false;
+  bool updates     = false;   // (falls du die Option irgendwo nutzen willst)
+  bool darkMode    = false;
+  bool offlineMode = false;   // <<< für Work‑Seite wichtig
 }

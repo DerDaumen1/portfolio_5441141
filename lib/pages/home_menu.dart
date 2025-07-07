@@ -44,10 +44,13 @@ class HomeMenu extends StatelessWidget {
 
             // ► Work & Mood
             _menuButton(
-              context,
-              title: 'Work & Mood',
-              builder: (_) => WorkPage(data: appData),
-            ),
+            context,
+  title: 'Work',
+  builder: (_) => WorkPage(
+    data: appData,
+    onThemeChange: onThemeChange, // einfach durchreichen
+  ),
+),
 
             // ► About‑Seite (Anzeige)
             _menuButton(
